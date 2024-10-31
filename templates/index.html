@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    ul li{
+      border: 2px black solid;
+      padding: 10px;
+      margin: 10px;
+    }
+
+  </style>
+  <a href="/add"><button>Add Question</button></a>
+  <ul>
+    {% for q in ques %}
+    <li>
+        <h1>Ques : {{ q['ques'] }}</h1>
+      <h2>Ans : {{ q['ans'] }}</h2>
+      <a href="/remove?q={{q['ques']}}"><button>Delete</button></a>
+    </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
